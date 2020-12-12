@@ -21,4 +21,5 @@ export default createMuiTheme({
       default: '#242424'
     }
   }
-})
+});
+
