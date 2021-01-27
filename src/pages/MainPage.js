@@ -31,8 +31,8 @@ function MainPage() {
           <MainPageNavButton Icon={FavoriteIcon} text="O Projekcie" link="/about-us" />
         </ButtonsContainer>
         <MediaContainer>
-            <MainPageMediaButton enumIcon="pk" link="https://www.pk.edu.pl/index.php?lang=pl" />
-            <MainPageMediaButton enumIcon="twitter" link="https://twitter.com/runepowered" />
+          <MainPageMediaButton enumIcon="pk" link="https://www.pk.edu.pl/index.php?lang=pl" />
+          <MainPageMediaButton enumIcon="twitter" link="https://twitter.com/runepowered" />
         </MediaContainer>
       </MainPageCanvas>
     </>

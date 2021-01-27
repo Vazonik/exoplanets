@@ -1,11 +1,11 @@
 import React from 'react';
 import { planetStyle } from './styles';
 
-function Planet({ size=100 }) {
-  const classes = planetStyle({ size });
+function Planet(props) {
+  const classes = planetStyle({ size: props.size || 200 });
 
   return (
-    <div className={classes.planet}></div>
+    <div {...props} className={classes.planet + (props.className ? ` ${props.className}` : '')}></div>
   );
 }
 

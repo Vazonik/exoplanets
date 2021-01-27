@@ -6,6 +6,8 @@ import { CssBaseline } from '@material-ui/core';
 import App from './components/App';
 import DefaultTheme from './themes/default';
 
+import './style.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={DefaultTheme}>

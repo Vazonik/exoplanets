@@ -8,3 +8,5 @@ function MadeBy() {
     </div>
   );
 }
+
+export default MadeBy;
