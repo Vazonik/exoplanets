@@ -74,7 +74,13 @@ export const lgNavItemStyle = makeStyles(theme => ({
       color: 'rgb(127, 84, 192)',
       borderBottom: '3px solid rgb(127, 84, 192)'
     },
-    userSelect: 'none'
+    userSelect: 'none',
+    transition: 'all 0.2s ease-in-out',
+    "::after": {
+      content: '"test"',
+      border: '1px solid red',
+      width: '100%'
+    }
   },
   lgNavIcon: {
     marginRight: '10px',

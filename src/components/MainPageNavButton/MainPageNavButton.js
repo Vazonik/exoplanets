@@ -12,9 +12,7 @@ export default function MainPageNavButton({Icon, text, link}) {
   const history = useHistory();
 
   const redirectTo = () => {
-    setTimeout(() => {
-      history.push(link);
-    }, 200);
+    history.push(link);
   }
 
   return (
