@@ -1,15 +1,17 @@
 import React from 'react';
 
 import RegularHeader from '../components/RegularHeader/RegularHeader';
+import PageCanvas from '../components/PageCanvas/PageCanvas';
+import ExoplanetsChart from '../components/ExoplanetsChart/ExoplanetsChart';
 
 function Chart({ exoplanets }) {
 
   return (
     <>
       <RegularHeader />
-      <div>
-        {exoplanets.map(e => <div>{e.pl_hostname}</div>)}
-      </div>
+      <PageCanvas>
+        <ExoplanetsChart exoplanets={exoplanets} />
+      </PageCanvas>
     </>
   );
 }
