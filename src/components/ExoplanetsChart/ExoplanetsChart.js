@@ -1,153 +1,192 @@
-import React from 'react';
+import React from "react";
 import MUIDataTable from "mui-datatables";
 
-import Planet from '../Planet/Planet';
-import { exoplanetsChartStyle } from './style';
+import Planet from "../Planet/Planet";
+import { exoplanetsChartStyle } from "./style";
 
 function drawPlanet(val, meta) {
-    const mass = meta.rowData[1];
-    const radius = meta.rowData[2];
+  const mass = meta.rowData[1];
+  const radius = meta.rowData[2];
 
-    return <div style={{display: 'flex', alignItems: 'center'}}>
-        <Planet size={20} type="planet" />
-        <div style={{paddingLeft: 10}}>{val}</div>
+  return (
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <Planet size={20} type="planet" />
+      <div style={{ paddingLeft: 10 }}>{val}</div>
     </div>
+  );
 }
 
 function drawStar(val, meta) {
-    const temperature = meta.rowData[9];
+  const temperature = meta.rowData[9];
 
-    return <div style={{display: 'flex', alignItems: 'center'}}>
-        <Planet
-            size={20}
-            type="star"
-            starOptions={{
-                temperature: temperature
-            }}
-        />
-        <div style={{paddingLeft: 10}}>{val}</div>
+  return (
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <Planet
+        size={20}
+        type="star"
+        starOptions={{
+          temperature: temperature,
+        }}
+      />
+      <div style={{ paddingLeft: 10 }}>{val}</div>
     </div>
+  );
 }
 
 const columns = [
-    {
-        name: "Planeta",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: drawPlanet
-        }
+  {
+    name: "Planeta",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: drawPlanet,
     },
-    {
-        name: "Masa [♃]",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: val => val || "n/d"
-        }
+  },
+  {
+    name: "Masa [♃]",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: (val) => val || "n/d",
     },
-    {
-        name: "Średnica [♃]",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: val => val || "n/d"
-        }
+  },
+  {
+    name: "Średnica [♃]",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: (val) => val || "n/d",
     },
-    {
-        name: "Gęstość [g/cm^3]",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: val => val || "n/d"
-        }
+  },
+  {
+    name: "Gęstość [g/cm^3]",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: (val) => val || "n/d",
     },
-    {
-        name: "Okres orbitalny [dni🜨]",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: val => val || "n/d"
-        }
+  },
+  {
+    name: "Okres orbitalny [dni🜨]",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: (val) => val || "n/d",
     },
-    {
-        name: "Apoapsis [au]",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: val => val || "n/d"
-        }
+  },
+  {
+    name: "Apoapsis [au]",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: (val) => val || "n/d",
     },
-    {
-        name: "Gwiazda",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: drawStar
-        }
+  },
+  {
+    name: "Gwiazda",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: drawStar,
     },
-    {
-        name: "Masa gw. [☉]",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: val => val || "n/d"
-        }
+  },
+  {
+    name: "Masa gw. [☉]",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: (val) => val || "n/d",
     },
-    {
-        name: "Średnica gw. [☉]",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: val => val || "n/d"
-        }
+  },
+  {
+    name: "Średnica gw. [☉]",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: (val) => val || "n/d",
     },
-    {
-        name: "Temperatura ef. gw. [K]",
-        options: {
-            filter: false,
-            sort: true,
-            customBodyRender: val => val || "n/d"
-        }
+  },
+  {
+    name: "Temperatura ef. gw. [K]",
+    options: {
+      filter: false,
+      sort: true,
+      customBodyRender: (val) => val || "n/d",
     },
-    "Metoda odkrycia",
+  },
+  "Metoda odkrycia",
 ];
 
 const options = {
-    print: false,
-    setTableProps: () => ({
-        size: 'small'
-    })
-}
+  print: false,
+  rowsPerPage: 15,
+  setTableProps: () => ({
+    size: "small",
+  }),
+  textLabels: {
+    body: {
+      noMatch: "Przepraszamy, nie znaleziono pasujących rekordów",
+      toolTip: "Sortuj",
+      columnHeaderTooltip: (column) => `Sortuj według ${column.label}`,
+    },
+    pagination: {
+      next: "Następna strona",
+      previous: "Poprzednia strona",
+      rowsPerPage: "Wiersze na stronę:",
+      displayRows: "z",
+    },
+    toolbar: {
+      search: "Szukaj",
+      downloadCsv: "Pobierz CSV",
+      print: "Drukuj",
+      viewColumns: "Pokaż kolumny",
+      filterTable: "Filtruj tabelę",
+    },
+    filter: {
+      all: "Wszystkie",
+      title: "FILTRY",
+      reset: "RESET",
+    },
+    viewColumns: {
+      title: "Pokaż kolumny",
+      titleAria: "Pokaż/Ukryj kolumny tabeli",
+    },
+    selectedRows: {
+      text: "wiersz(e) zaznaczone",
+      delete: "Usuń",
+      deleteAria: "Usuń zaznaczone wiersze",
+    },
+  },
+};
 
 function ExoplanetsChart({ exoplanets }) {
-    const classes = exoplanetsChartStyle();
+  const classes = exoplanetsChartStyle();
 
-    const getNecessaryData = () => {
-        return exoplanets.map(e => [
-            e.pl_name, // nazwa
-            e.pl_bmassj, // masa
-            e.pl_radj, // średnica
-            e.pl_dens, // gęstość
-            e.pl_orbper, // okres orbitalny
-            e.pl_orbsmax, // apoapsis
-            e.pl_hostname, // gwiazda
-            e.st_mass,
-            e.st_rad,
-            e.st_teff,
-            e.pl_discmethod, // metoda odkrycia
-        ]);
-    }
+  const getNecessaryData = () => {
+    return exoplanets.map((e) => [
+      e.pl_name, // nazwa
+      e.pl_bmassj, // masa
+      e.pl_radj, // średnica
+      e.pl_dens, // gęstość
+      e.pl_orbper, // okres orbitalny
+      e.pl_orbsmax, // apoapsis
+      e.pl_hostname, // gwiazda
+      e.st_mass,
+      e.st_rad,
+      e.st_teff,
+      e.pl_discmethod, // metoda odkrycia
+    ]);
+  };
 
-    return (
-        <MUIDataTable
-            className={classes.root}
-            title={"Tabela Egzoplanet"}
-            columns={columns}
-            data={getNecessaryData()}
-            options={options}
-        />
-    );
+  return (
+    <MUIDataTable
+      className={classes.root}
+      title={"Tabela Egzoplanet"}
+      columns={columns}
+      data={getNecessaryData()}
+      options={options}
+    />
+  );
 }
 
 export default ExoplanetsChart;
