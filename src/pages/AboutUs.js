@@ -1,16 +1,16 @@
 import React from "react";
 
 import RegularHeader from "../components/RegularHeader/RegularHeader";
-import PageCanvas from "../components/PageCanvas/PageCanvas";
+import { MainPageCanvas } from "../components/MainPageCanvas/MainPageCanvas";
 import MadeBy from "../components/MadeBy/MadeBy";
 
 function AboutUs() {
   return (
     <>
       <RegularHeader />
-      <PageCanvas>
+      <MainPageCanvas>
         <MadeBy />
-      </PageCanvas>
+      </MainPageCanvas>
     </>
   );
 }
