@@ -34,6 +34,13 @@ export const greatHeaderStyle = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       display: 'none'
     }
+  },
+  navSmButton: {
+    position: 'absolute',
+    right: 10,
+    [theme.breakpoints.up('md')]: {
+      display: 'none'
+    }
   }
 }));
 

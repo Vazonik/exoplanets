@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import TableChartIcon from '@material-ui/icons/TableChart';
 import SearchIcon from '@material-ui/icons/Search';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 import {
   greatHeaderStyle,
@@ -61,6 +64,13 @@ function RegularHeader() {
         <LgNavItem Icon={TableChartIcon} to="/chart" label="Tabela Egzoplanet" />
         <LgNavItem Icon={SearchIcon} to="/search" label="Wyszukiwarka" />
         <LgNavItem Icon={FavoriteIcon} to="/about-us" label="O Projekcie" />
+      </div>
+      <div className={classes.navSmButton}>
+        <Link to="/">
+          <IconButton>
+            <MenuIcon />
+          </IconButton>
+        </Link>
       </div>
     </header>
   );
