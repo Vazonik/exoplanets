@@ -18,7 +18,7 @@ function App() {
 
   return (
     <HashRouter>
-      {/* <ApiLoader onLoad={onApiLoaded} /> */}
+      <ApiLoader onLoad={onApiLoaded} />
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route

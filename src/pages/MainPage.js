@@ -8,11 +8,11 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import GreatHeader from '../components/GreatHeader/GreatHeader';
 import {
-  MainPageCanvas,
+  StarCanvas,
   HeaderContainer,
   ButtonsContainer,
   MediaContainer
-} from '../components/MainPageCanvas/MainPageCanvas';
+} from '../components/StarCanvas/StarCanvas';
 import MainPageNavButton from '../components/MainPageNavButton/MainPageNavButton';
 import MainPageMediaButton from '../components/MainPageMediaButton/MainPageMediaButton';
 
@@ -21,7 +21,7 @@ function MainPage() {
   return (
     <>
       <GreatHeader />
-      <MainPageCanvas>
+      <StarCanvas>
         <HeaderContainer>
           <Typography variant="h5">Strona Główna</Typography>
         </HeaderContainer>
@@ -34,7 +34,7 @@ function MainPage() {
           <MainPageMediaButton enumIcon="pk" link="https://www.pk.edu.pl/index.php?lang=pl" />
           <MainPageMediaButton enumIcon="twitter" link="https://twitter.com/runepowered" />
         </MediaContainer>
-      </MainPageCanvas>
+      </StarCanvas>
     </>
   );
 }

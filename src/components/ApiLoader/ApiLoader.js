@@ -4,6 +4,10 @@ import Typography from '@material-ui/core/Typography';
 
 import './ApiLoader.css';
 
+const fetchAddress = {
+    local: '/res/data.json',
+    online: 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&order=dec&format=json'
+};
 class ApiLoader extends React.Component {
     constructor(props) {
         super(props);
@@ -16,7 +20,7 @@ class ApiLoader extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&order=dec&format=json")
+        fetch(fetchAddress.local)
         .then(res => this.onFetch(res))
         .catch(err => this.errorHandler(err));
     }
