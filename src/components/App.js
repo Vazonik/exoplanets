@@ -31,6 +31,11 @@ function App() {
           path="/search"
           render={() => <Search exoplanets={exoplanetsArray} />}
         />
+        <Route
+          exact
+          path="/search/:name"
+          render={() => <Search exoplanets={exoplanetsArray} />}
+        />
         <Route exact path="/about-us" component={AboutUs} />
         <Route component={Error404} />
       </Switch>

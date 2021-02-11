@@ -1,18 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MUIDataTable from "mui-datatables";
 
 import Planet from "../Planet/Planet";
 import { exoplanetsChartStyle } from "./style";
 
 function drawPlanet(val, meta) {
-  const mass = meta.rowData[1];
-  const radius = meta.rowData[2];
-
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <Planet size={20} type="planet" />
-      <div style={{ paddingLeft: 10 }}>{val}</div>
-    </div>
+    <Link to={`/search/${val}`} className="aSuper">
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <Planet size={20} type="planet" />
+        <div style={{ paddingLeft: 10 }}>{val}</div>
+      </div>
+    </Link>
   );
 }
 
@@ -20,16 +20,18 @@ function drawStar(val, meta) {
   const temperature = meta.rowData[9];
 
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <Planet
-        size={20}
-        type="star"
-        starOptions={{
-          temperature: temperature,
-        }}
-      />
-      <div style={{ paddingLeft: 10 }}>{val}</div>
-    </div>
+    <Link to={`/search/${val}`} className="aSuper">
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <Planet
+          size={20}
+          type="star"
+          starOptions={{
+            temperature: temperature,
+          }}
+        />
+        <div style={{ paddingLeft: 10 }}>{val}</div>
+      </div>
+    </Link>
   );
 }
 

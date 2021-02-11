@@ -11,7 +11,8 @@ function LgNavItem({ Icon, label, to }) {
   const history = useHistory();
 
   const checkLink = () => {
-    return history.location.pathname === to;
+    const path = history.location.pathname;
+    return path === to || (path.includes("search") && to === "/search");
   }
 
   const getClass = () => {
