@@ -16,10 +16,10 @@ export const madeByStyle = makeStyles((theme) => ({
     height: "60vh",
     width: "40vw",
     minWidth: "400px",
-    minHeight: "800px",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
       textAlign: "center",
+      minHeight: "1000px",
     },
     "& > *": { margin: "5%" },
   },
