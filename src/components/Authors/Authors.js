@@ -8,7 +8,7 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 
-import { authorsStyle } from './style';
+import { authorsStyle } from "./style";
 
 export default function Authors() {
   const classes = authorsStyle();
@@ -20,10 +20,7 @@ export default function Authors() {
       </Typography>
       <ListItem>
         <ListItemAvatar>
-          <Avatar
-            alt="Dawid Draguła"
-            src="/res/authors/dd.jpg"
-          />
+          <Avatar alt="Dawid Draguła" src="exoplanets/res/authors/dd.jpg" />
         </ListItemAvatar>
         <ListItemText primary="Dawid Draguła" />
       </ListItem>
@@ -32,7 +29,7 @@ export default function Authors() {
         <ListItemAvatar>
           <Avatar
             alt="Krzysztof Bętkowski"
-            src="/res/authors/kb.jpg"
+            src="exoplanets/res/authors/kb.jpg"
           />
         </ListItemAvatar>
         <ListItemText primary="Krzysztof Bętkowski" />

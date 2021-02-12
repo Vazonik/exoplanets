@@ -1,16 +1,18 @@
-import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import React from "react";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
 
-import { foundPlanetStyles } from './style';
+import Planet from "../Planet/Planet";
 
-const getRowsAsPlanet = data => {
+import { foundPlanetStyles } from "./style";
+
+const getRowsAsPlanet = (data) => {
   return [
     { name: "Host Star Name", value: data.pl_hostname },
     { name: "Planet Letter", value: data.pl_letter },
@@ -39,9 +41,9 @@ const getRowsAsPlanet = data => {
     { name: "Date of Last Update", value: data.rowupdate },
     { name: "Discovery Facility", value: data.pl_facility },
   ];
-}
+};
 
-const getRowsAsStar = data => {
+const getRowsAsStar = (data) => {
   const fp = data[0];
 
   return [
@@ -51,12 +53,12 @@ const getRowsAsStar = data => {
     { name: "Effective Temperature (K)", value: fp.st_teff },
     { name: "Stellar Mass (solar mass)	", value: fp.st_mass },
     { name: "Stellar Radius (solar radii)", value: fp.st_rad },
-    { name: "Planets in System", value: data.map(p => p.pl_name).join(", ") }
+    { name: "Planets in System", value: data.map((p) => p.pl_name).join(", ") },
   ];
-}
+};
 
 const getRows = (data, type) => {
-  switch(type) {
+  switch (type) {
     case "planet":
       return getRowsAsPlanet(data);
     case "star":
@@ -64,10 +66,10 @@ const getRows = (data, type) => {
     default:
       return [];
   }
-}
+};
 
-const getLabel = type => {
-  switch(type) {
+const getLabel = (type) => {
+  switch (type) {
     case "planet":
       return "Planeta";
     case "star":
@@ -75,16 +77,33 @@ const getLabel = type => {
     default:
       return "Obiekt";
   }
-}
+};
+
+const getStarOptions = (data, type) => {
+  if (type === "star") return { temperature: data[0].st_teff };
+};
 
 function FoundPlanet(props) {
   const classes = foundPlanetStyles();
 
   return (
     <Paper className={classes.root}>
-      <Typography variant="h5">{getLabel(props.type)}: {props.name}</Typography>
+      <div className={classes.headerContainer}>
+        <Planet
+          size={20}
+          type={props.type}
+          starOptions={getStarOptions(props.data, props.type)}
+        />
+        <Typography variant="h5">
+          {getLabel(props.type)}: {props.name}
+        </Typography>
+      </div>
       <TableContainer component={Paper} className={classes.tableContainer}>
-        <Table className={classes.table} size="small" aria-label="a dense table">
+        <Table
+          className={classes.table}
+          size="small"
+          aria-label="a dense table"
+        >
           <TableHead>
             <TableRow>
               <TableCell>Nazwa</TableCell>
@@ -94,7 +113,9 @@ function FoundPlanet(props) {
           <TableBody>
             {getRows(props.data, props.type).map((row) => (
               <TableRow key={row.name}>
-                <TableCell component="th" scope="row">{row.name}</TableCell>
+                <TableCell component="th" scope="row">
+                  {row.name}
+                </TableCell>
                 <TableCell align="right">{row.value}</TableCell>
               </TableRow>
             ))}
