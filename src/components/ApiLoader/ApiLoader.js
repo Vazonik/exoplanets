@@ -20,7 +20,7 @@ class ApiLoader extends React.Component {
     }
 
     componentDidMount() {
-        fetch(fetchAddress.local)
+        fetch(fetchAddress.online)
         .then(res => this.onFetch(res))
         .catch(err => this.errorHandler(err));
     }
