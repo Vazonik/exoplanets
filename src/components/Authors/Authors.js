@@ -22,7 +22,7 @@ export default function Authors() {
         <ListItemAvatar>
           <Avatar
             alt="Dawid Draguła"
-            src="/exoplanets/res/authors/dd.jpg"
+            src="/res/authors/dd.jpg"
           />
         </ListItemAvatar>
         <ListItemText primary="Dawid Draguła" />
@@ -32,7 +32,7 @@ export default function Authors() {
         <ListItemAvatar>
           <Avatar
             alt="Krzysztof Bętkowski"
-            src="/exoplanets/res/authors/kb.jpg"
+            src="/res/authors/kb.jpg"
           />
         </ListItemAvatar>
         <ListItemText primary="Krzysztof Bętkowski" />
