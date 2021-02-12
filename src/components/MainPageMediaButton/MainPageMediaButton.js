@@ -11,7 +11,7 @@ export default function MainPageMediaButton({enumIcon, link}) {
       case "twitter":
         return <TwitterIcon />;
       default:
-        return <img src="/res/pk-logo.png" width="20px" alt="pk" />
+        return <img src="/exoplanets/res/pk-logo.png" width="20px" alt="pk" />
     }
   };
 
