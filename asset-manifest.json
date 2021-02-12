@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/exoplanets/static/css/main.956bfb2f.chunk.css",
-    "main.js": "/exoplanets/static/js/main.ecce8c0a.chunk.js",
-    "main.js.map": "/exoplanets/static/js/main.ecce8c0a.chunk.js.map",
+    "main.js": "/exoplanets/static/js/main.06bf2b8f.chunk.js",
+    "main.js.map": "/exoplanets/static/js/main.06bf2b8f.chunk.js.map",
     "runtime-main.js": "/exoplanets/static/js/runtime-main.526da394.js",
     "runtime-main.js.map": "/exoplanets/static/js/runtime-main.526da394.js.map",
     "static/js/2.c85e53a6.chunk.js": "/exoplanets/static/js/2.c85e53a6.chunk.js",
     "static/js/2.c85e53a6.chunk.js.map": "/exoplanets/static/js/2.c85e53a6.chunk.js.map",
     "index.html": "/exoplanets/index.html",
-    "precache-manifest.66390ec0b05a843feb2477205fc73508.js": "/exoplanets/precache-manifest.66390ec0b05a843feb2477205fc73508.js",
+    "precache-manifest.11136738db0b50937ae52e1816ee51cc.js": "/exoplanets/precache-manifest.11136738db0b50937ae52e1816ee51cc.js",
     "service-worker.js": "/exoplanets/service-worker.js",
     "static/css/main.956bfb2f.chunk.css.map": "/exoplanets/static/css/main.956bfb2f.chunk.css.map",
     "static/js/2.c85e53a6.chunk.js.LICENSE.txt": "/exoplanets/static/js/2.c85e53a6.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.526da394.js",
     "static/js/2.c85e53a6.chunk.js",
     "static/css/main.956bfb2f.chunk.css",
-    "static/js/main.ecce8c0a.chunk.js"
+    "static/js/main.06bf2b8f.chunk.js"
   ]
 }
